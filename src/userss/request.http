@@ -1,0 +1,6 @@
+### create a new user
+POST http://localhost:3000/auth/signup
+headers:{'Content-Type: ': 'application/json','Accept: ': 'application/json'}
+
+body:{ "email":"neha@gmail.comcom","password":"asdfg"}
+

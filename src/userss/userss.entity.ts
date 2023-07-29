@@ -1,10 +1,23 @@
-import {Entity,Column,PrimaryGeneratedColumn} from 'typeorm';
+import {AfterInsert,AfterRemove,AfterUpdate,
+    Entity,Column,PrimaryGeneratedColumn} from 'typeorm';
+
 @Entity()
 export class Userss{
-    @PrimaryGeneratedColumn()
+@PrimaryGeneratedColumn()
  id:number;
-@Column()
+
+@Column("varchar", { nullable: true})
  email:string;
-@Column()
- passwoord:string;
+
+@Column("varchar", { nullable: true})
+ password:string;
+ @AfterInsert()//whenever new value will be inserted to database t his will get executed
+ logInsert(){
+    console.log("inserted user with Id")
+
+ }
+ @AfterRemove()
+ logRemove(){
+    
+ }
 }
